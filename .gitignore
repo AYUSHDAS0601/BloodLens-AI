@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask/Web apps
+instance/
+uploads/
+.webassets-cache
+
+# Datasets and Large Media
+data/
+BCCD_Dataset-master/
+*.mp4
+*.avi
+*.mkv
+
+# Machine Learning models & weights
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.onnx
+*.weights
+*.pb
+
+# Environment Variables
+.env
+.flaskenv
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
