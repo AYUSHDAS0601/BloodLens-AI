@@ -1,0 +1,26 @@
+Types of operator
+data types
+objects
+mislenious operator
+list, vector, factor syntax with example
+fun categories
+factorial / prime
+types of loop
+switch case operator example
+file reading .xls, .bz
+readr package
+dplyr package
+dataframe create and its operation
+matrix create and its operation
+string function: what is string handling , what is string operation
+json
+webapi
+databse operation
+7 layer(theory)
+7 layer( at least 3 code)
+rest all numerical on sure q
+linear
+mlr
+chi square
+correlation
+normal and binomial

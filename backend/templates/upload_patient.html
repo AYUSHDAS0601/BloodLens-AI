@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Patient Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="welcome-message">
+            <a href="{{ url_for('dashboard') }}" style="text-decoration: none; color: inherit;">&larr; Back to Dashboard</a>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </nav>
+
+    <div class="container dashboard-container">
+        
+        <div class="form-section" style="margin-bottom: 0;">
+            <h3>Upload New Patient Image</h3>
+            <form method="POST" action="{{ url_for('upload_patient') }}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="first_name">Patient's First Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Patient's Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Patient's Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Patient's Phone Number</label>
+                    <input type="tel" id="phone_number" name="phone_number" required>
+                </div>
+                 <div class="form-group">
+                    <label for="image">Microscopic Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button type="submit">Upload Patient Data</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,12 +1,10 @@
-# Byte-compiled / optimized / DLL files
+# ─── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
 
-# Distribution / packaging
+# ─── Distribution / packaging ──────────────────────────────────────────────────
 build/
 develop-eggs/
 dist/
@@ -23,27 +21,27 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Virtual Environments
+# ─── Virtual Environments ──────────────────────────────────────────────────────
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
+.venv/
 
-# Flask/Web apps
+# ─── Flask / Web App Artifacts ─────────────────────────────────────────────────
 instance/
 uploads/
+backend/instance/
+backend/static/uploads/
 .webassets-cache
+*.db
+*.sqlite
+*.sqlite3
 
-# Datasets and Large Media
-data/
-BCCD_Dataset-master/
-*.mp4
-*.avi
-*.mkv
-
-# Machine Learning models & weights
+# ─── ML Model Weights (large binary files) ─────────────────────────────────────
 *.pt
 *.pth
 *.h5
@@ -51,18 +49,41 @@ BCCD_Dataset-master/
 *.onnx
 *.weights
 *.pb
+*.tflite
+*.pkl
+*.joblib
 
-# Environment Variables
+# ─── Datasets & Large Media ────────────────────────────────────────────────────
+data/
+BCCD_Dataset-master/
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.heic
+*.HEIC
+
+# ─── Misc artifacts & temp files ───────────────────────────────────────────────
+# UUID-named files (e.g. cached downloads)
+[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]-[0-9a-f][0-9a-f][0-9a-f][0-9a-f]-[0-9a-f][0-9a-f][0-9a-f][0-9a-f]-[0-9a-f][0-9a-f][0-9a-f][0-9a-f]-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]
+results.csv
+*.log
+*.tmp
+*.cache
+
+# ─── Environment Variables ─────────────────────────────────────────────────────
 .env
+.env.*
 .flaskenv
 
-# IDEs and Editors
+# ─── IDEs & Editors ────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS generated files
+# ─── OS generated ──────────────────────────────────────────────────────────────
 .DS_Store
 .DS_Store?
 ._*

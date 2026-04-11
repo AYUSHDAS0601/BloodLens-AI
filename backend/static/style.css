@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* --- Theme Colors --- */
+:root {
+    --background-color: #1a1a2e; /* Dark Slate Blue */
+    --form-background: #2a2a3e;   /* Slightly Lighter Slate */
+    --text-color: #f0f0f0;         /* Off-white Text */
+    --label-color: #a0a0b0;        /* Softer Gray for Labels */
+    --accent-color: #00f5c4;       /* Vibrant Teal */
+    --accent-hover: #1affd1;      /* Lighter Teal for Hover */
+    --dark-text: #1a1a2e;          /* Dark Text for Buttons */
+}
+
+/* --- General Body Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center; /* Horizontally centers the main container */
+    min-height: 100vh;
+    margin: 0;
+    padding: 100px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+/* --- Top Navigation Bar for Dashboard --- */
+.top-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: var(--form-background);
+    border-bottom: 1px solid #4a4a5e;
+}
+
+.welcome-message {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* --- Login & Dashboard Container Styles --- */
+.container {
+    background-color: var(--form-background);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--accent-color);
+}
+
+.dashboard-container {
+    max-width: 800px;
+    border: 1px solid #4a4a5e;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* --- Form Group & Input Styles --- */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4a4a5e;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* --- Button & Link Styles --- */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+.sub-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+.sub-text a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sub-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- Dashboard Form Section Styles --- */
+.form-section {
+    background-color: var(--background-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* --- Specific Input Type Styling --- */
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300F5C4%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: .65em auto;
+}
+
+.form-group input[type="file"] {
+    color: var(--label-color);
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- Flash Message Styles --- */
+.flash {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: var(--dark-text);
+    text-align: center;
+    font-weight: 500;
+}
+
+.flash.success { background-color: #28a745; }
+.flash.danger { background-color: #dc3545; color: white; }
+.flash.info { background-color: #17a2b8; }
+
+/* --- Dashboard Grid and Card Styles --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px; /* Space between the cards */
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid #4a4a5e;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(0, 245, 196, 0.1);
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.dashboard-card p {
+    color: var(--label-color);
+    font-size: 15px;
+    margin-bottom: 0;
+    line-height: 1.5;
+}

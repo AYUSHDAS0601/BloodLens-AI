@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="welcome-message">
+            <a href="{{ url_for('dashboard') }}" style="text-decoration: none; color: inherit;">&larr; Back to Dashboard</a>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </nav>
+
+    <div class="container dashboard-container">
+        
+        <div class="form-section">
+            <h3>Search for a Patient</h3>
+            <p style="color: var(--label-color); font-size: 15px; margin-top: -10px; margin-bottom: 20px;">
+                You can search by first name, last name, or email address.
+            </p>
+            <form method="POST" action="{{ url_for('search_patient') }}">
+                <div class="form-group">
+                    <input type="text" id="search_query" name="search_query" placeholder="Enter name or email..." required>
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="results-section" style="margin-top: 30px;">
+            {% if patients %}
+                <h4>Search Results:</h4>
+                {% for patient in patients %}
+                    <div class="patient-card">
+                        <div class="patient-info">
+                            <p><strong>Email:</strong> {{ patient.email if patient.email else 'Not Provided' }}</p>
+                            <p><strong>Phone:</strong> {{ patient.phone_number if patient.phone_number else 'Not Provided' }}</p>
+                            <h5 style="margin-top: 10px;">{{ patient.first_name }} {{ patient.last_name }}</h5>
+                            <p style="font-size: 13px; color: var(--label-color);">Age: {{ patient.age }} | Gender: {{ patient.gender }}</p>
+                        </div>
+                        <div class="patient-image-link">
+                            <a href="{{ url_for('static', filename='uploads/' + patient.image_filename) }}" target="_blank">View Image</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% elif request.method == 'POST' %}
+                <p style="text-align: center; color: var(--label-color);">No patients found matching your search.</p>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+</html>

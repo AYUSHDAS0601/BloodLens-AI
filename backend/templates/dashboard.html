@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="welcome-message">Welcome, Dr. {{ current_user.first_name }}</div>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </nav>
+
+    <div class="container dashboard-container">
+        <h2>Doctor Dashboard</h2>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="dashboard-grid">
+            <a href="{{ url_for('upload_patient') }}" class="dashboard-card">
+                <h3>Upload New Patient</h3>
+                <p>Submit a new microscopic image and patient details for analysis.</p>
+            </a>
+            <a href="{{ url_for('search_patient') }}" class="dashboard-card">
+                <h3>Search Previous Patients</h3>
+                <p>Find and review data for patients you have previously uploaded.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
